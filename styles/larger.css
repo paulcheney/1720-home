@@ -1,0 +1,27 @@
+@media only screen and (min-width: 40rem) {
+  header,
+  main,
+  nav,
+  footer {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  /************************** NAVIGATION **************************/
+  nav {
+   position: static;
+  }
+
+  nav ul {
+    display: flex;
+    margin-left: 10px;
+  }
+
+  nav a {
+    border: none;
+    padding: 0.5rem 1.5rem;
+  
+  }
+
+
+} /* end media query */

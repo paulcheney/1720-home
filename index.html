@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator | Project Depot</title>
+
+    <!-- STYLESHEETS -->
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/small.css">
+    <link rel="stylesheet" href="styles/larger.css">
+
+    <!-- GOOGLE FONT -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+
+    <!-- OPEN GRAPH DATA -->
+    <meta property="og:title" content="Calculator | Project Depot">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://paulcheney.github.io/1720-home/images/opengraph.jpg">
+    <meta property="og:logo" content="https://paulcheney.github.io/1720-home/images/logo.svg" />
+    <meta property="og:url" content="https://paulcheney.github.io/1720-home">
+    <meta property="og:description"
+        content="Project Depot is your one-stop destination for all things home improvement. From tools and hardware to paint, lumber, and expert advice, we provide everything you need to tackle any project—big or small—with confidence.">
+    <meta property="og:site_name" content="Project Depot">
+
+    <!-- FAV ICON LINKS -->
+    <link rel="icon" type="image/png" href="favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <link rel="shortcut icon" href="favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="Project Depot" />
+    <link rel="manifest" href="site.webmanifest" />
+
+    <!-- SCRIPTS -->
+    <script src="scripts/getdates.js" defer></script>
+    <script src="scripts/paint.js" type="module" defer></script>
+
+</head>
+
+<body>
+    <header>
+        <img src="images/logo.svg" alt="Hire Designers" width="1" height="1" loading="lazy">
+        <span>Project Depot</span>
+    </header>
+
+    <nav id="navbar">
+        <ul>
+            <li><a href="#"><img src="images/nav-supplies.svg"><div>Supplies</div></a></li>
+            <li class="active"><a href="index.html"><img src="images/nav-calculator.svg"><div>Calculator</div></a></li>
+            <li><a href="#"><img src="images/nav-color.svg"><div>Find Colors</div></a></li>
+            <li><a href="#"><img src="images/nav-pros.svg"><div>For Pros</div></a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <h1>Supply Calculator</h1>
+        <img class="hero" src="images/hero.webp" alt="hero image" width="1200" height="400">
+        <div class="sizes">
+            <label>Room Width <input type=number id="width" placeholder="feet" value="12" required ></label>
+            <label>Room Depth <input type=number id="depth" placeholder="feet" value="12" required></label>
+            <label>Wall Height <input type=number id="height" placeholder="feet" value="9" required></label>
+            <label>Paint Quality <select id="quality">
+                    <option value="none" disabled selected>Select an Option</option>
+                    <option value="600">Premium</option>
+                    <option value="500" selected>Standard</option>
+                    <option value="400">Cheap</option>
+                </select></label>
+            <button id="calculate"> Calcualte </button>
+        </div>
+
+        <div class="results">
+            <section>
+                <h2>Paint Supplies</h2>
+                <ul id="paint"></ul>
+            </section>
+            <section>
+                <h2>Carpet Supplies</h2>
+                <ul id="carpet"></ul>
+            </section>
+
+            <p>The results of this calculation are for one coat of product. It assumes one gallon will cover approximately
+                400 square feet. The calculation is based on 3'x7' doors and 3'x5' windows. To ensure optimal coverage, we
+                recommend rounding up to the nearest gallon. For specific product coverage rates, please read the Product
+                Data Sheet (PDS) for the applicable product.</p>
+    
+            <p>The paint calculator is intended to provide the user with the approximate amount of product needed for a
+                project. Product requirements will vary according to factors such as application method and surface
+                condition. To verify product amounts, visit your neighborhood Sherwin-Williams store and speak with a
+                representative.</p>
+        </div>
+        
+
+    </main>
+    <footer>
+        <section class="social">
+
+            <a href="https://github.com/paulcheney" target="_blank"><img src="images/icon-github.svg"
+                    alt="GitHub Icon"></a>
+            <a href="https://www.linkedin.com/in/pcheney" target="_blank"><img src="images/icon-linkedin.svg"
+                    alt="Linked In Icon"></a>
+            <a href="https://www.youtube.com/@PaulCheney66" target="_blank"><img src="images/icon-youtube.svg"
+                    alt="Youtube Icon"></a>
+            <a href="https://www.facebook.com/paul.cheney.1422" target="_blank"><img src="images/icon-facebook.svg"
+                    alt="Facebook Icon"></a>
+        </section>
+        <p>&copy; <span id="currentyear"></span> • Paul Cheney • DWDD1720</p>
+        <p id="lastModified"></p>
+    </footer>
+</body>
+
+</html>
