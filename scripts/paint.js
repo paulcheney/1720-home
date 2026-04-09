@@ -1,65 +1,49 @@
-//Grab a reference to the button
-const calculate = document.querySelector('#calculate')
-const paint = document.querySelector('#paint')
-const carpet = document.querySelector('#carpet')
+//Grab a reference to the elements
+const calculate = document.querySelector("#calculate");
+const supplyList = document.querySelector("#supplies");
 
-calculate.addEventListener('click', () => {
-    //delete previous calculated items.
-    document.querySelector('#paint').innerHTML = '';
-    document.querySelector('#carpet').innerHTML = '';
-    
-    const width = Number(document.querySelector('#width').value);
-    console.log(width);
+calculate.addEventListener("click", () => {
+  const width = Number(document.querySelector("#width").value);
+  //console.log(width);
 
-    const depth = Number(document.querySelector('#depth').value);
-    console.log(depth);
+  const depth = Number(document.querySelector("#depth").value);
+  //console.log(depth);
 
-    const height = Number(document.querySelector('#height').value);
-    console.log(height);
-	
-	const paintType = document.querySelector('#quality').selectedOptions[0].text;
-    const quality = Number(document.querySelector('#quality').selectedOptions[0].value);
-    console.log(paintType);
-    console.log(quality);
+  const height = Number(document.querySelector("#height").value);
+  //console.log(height);
 
+  const paintType = document.querySelector("#quality").selectedOptions[0].text;
+  const quality = Number(
+    document.querySelector("#quality").selectedOptions[0].value
+  );
+  //console.log(paintType);
+  console.log(height);
+
+  if (width && depth && height && quality) {
     //calculate yards of carpet from sq ft.
-    let carpet = (width * depth)/9;
-    console.log(carpet + " yards");
-
+    let carpet = (width * depth) / 9;
 
     // calculate tack strip from perimeter
-    let tackstrip = Number((width + depth)*2);
-    console.log(tackstrip + " tack strip");
+    let tackstrip = Number((width + depth) * 2);
 
     // calculate paint from perimeter times wall height
-    let walls = Number(((width * height * 2)+ (depth * height * 2))/quality);
-    console.log(walls + "  wall paint");
+    let walls = Number((width * height * 2 + depth * height * 2) / quality);
 
-    
-    let ceiling = (width * depth)/quality;
-    console.log(ceiling + " ceiling paint");
+    let ceiling = (width * depth) / quality;
     ceiling = Math.ceil(ceiling);
 
+    supplyList.innerHTML = `
+    <h2>Paint Suplies</h2>
+    <p>${Math.ceil(walls + ceiling)} gallons of primer paint</p>
+    <p>${Math.ceil(ceiling)} gallons of ${paintType} flat ceiling paint</p>
+    <p>${Math.ceil(walls)} gallons of ${paintType} semigloss wall paint</p>
+    
+    <h2>Carpet Suplies</h2>
+    <p>${Math.ceil(carpet)} yards of carpet</p>
+    <p>${Math.ceil(tackstrip)} feet of tack strip</p>
+    `
 
-    
-    additem('#paint', `${Math.ceil(walls + ceiling)} gallons of primer paint`);
-    additem('#paint', `${Math.ceil(ceiling)} gallons of ${paintType} flat ceiling paint`);
-    additem('#paint', `${Math.ceil(walls)} gallons of ${paintType} semigloss wall paint`);
-    
-
-    additem('#carpet', `${Math.ceil(carpet)} yards of carpet`);
-    additem('#carpet', `${Math.ceil(tackstrip)} feet of tack strip`);
-    
-    
+  } else {
+    supplyList.innerHTML ="Complete the form before asking for a supply list"
+  }
 }); // end function
-
-
-let additem = (list, message) => {
-    //console.log(list);
-    //console.log(message);
-    let theList = document.querySelector(list);
-    let myListItem = document.createElement("li");
-    myListItem.textContent = message;
-    theList.appendChild(myListItem);
-} // end add list item
-

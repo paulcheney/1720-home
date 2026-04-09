@@ -64,21 +64,16 @@
             <label>Wall Height <input type=number id="height" placeholder="feet" value="9" required></label>
             <label>Paint Quality <select id="quality">
                     <option value="none" disabled selected>Select an Option</option>
-                    <option value="600">Premium</option>
-                    <option value="500" selected>Standard</option>
-                    <option value="400">Cheap</option>
+                    <option value="600">Premium (600sqft per gallon)</option>
+                    <option value="500" >Standard (500sqft per gallon)</option>
+                    <option value="400">Cheap (400sqft per gallon)</option>
                 </select></label>
-            <button id="calculate"> Calcualte </button>
+            <button id="calculate">Calculate Supplies</button>
         </div>
 
         <div class="results">
-            <section>
-                <h2>Paint Supplies</h2>
-                <ul id="paint"></ul>
-            </section>
-            <section>
-                <h2>Carpet Supplies</h2>
-                <ul id="carpet"></ul>
+            <section id="supplies">
+               
             </section>
 
         </div>

@@ -7,21 +7,17 @@
     margin: 0 auto;
   }
 
-  /************************** NAVIGATION **************************/
+/************************** NAVIGATION **************************/
   nav {
-   position: static;
-  }
-
-  nav ul {
+    position: static;
+   }
+   
+   nav li {
     display: flex;
-    margin-left: 10px;
+    flex-grow: 1;
+    flex-direction: column;
   }
 
-  nav a {
-    border: none;
-    padding: 0.5rem 1.5rem;
-  
-  }
 
 
 } /* end media query */
