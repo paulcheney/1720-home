@@ -17,7 +17,7 @@ calculate.addEventListener("click", () => {
     document.querySelector("#quality").selectedOptions[0].value
   );
   //console.log(paintType);
-  console.log(height);
+  //console.log(quality);
 
   if (width && depth && height && quality) {
     //calculate yards of carpet from sq ft.
@@ -33,12 +33,12 @@ calculate.addEventListener("click", () => {
     ceiling = Math.ceil(ceiling);
 
     supplyList.innerHTML = `
-    <h2>Paint Suplies</h2>
+    <h2>Paint Supplies</h2>
     <p>${Math.ceil(walls + ceiling)} gallons of primer paint</p>
     <p>${Math.ceil(ceiling)} gallons of ${paintType} flat ceiling paint</p>
     <p>${Math.ceil(walls)} gallons of ${paintType} semigloss wall paint</p>
     
-    <h2>Carpet Suplies</h2>
+    <h2>Carpet Supplies</h2>
     <p>${Math.ceil(carpet)} yards of carpet</p>
     <p>${Math.ceil(tackstrip)} feet of tack strip</p>
     `
