@@ -147,7 +147,7 @@ h1 {
   font-size: 0.8rem;
   color: var(--color-mygrey-50);
   &::before {
-    content: "\002611";
+    content: "\2611";
     font-size: 1.5rem;
     color: var(--color-primary);
   }
